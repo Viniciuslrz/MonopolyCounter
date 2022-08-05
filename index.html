@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monopoly Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">  
+    <link rel="icon" href="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/442cf962-742d-4207-8ffd-fbbc72ecf829/d6qbt7b-22c0ab70-1e0a-474b-b736-034239611f09.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ0MmNmOTYyLTc0MmQtNDIwNy04ZmZkLWZiYmM3MmVjZjgyOVwvZDZxYnQ3Yi0yMmMwYWI3MC0xZTBhLTQ3NGItYjczNi0wMzQyMzk2MTFmMDkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZfRpQ-KyyDq-anE0YRqIjEoEO1k_E3-8fu3zmtlgeJQ" type = "image/x-icon">
+</head>
+<body>
+
+    <div class="PageContainer">
+        <div id="Player-1" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player1()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-1" for="PlayerNameValue-1" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-1" style="border-radius: 7px;">
+            <select id="PlayerBG-1" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP1">
+            </div>
+            <div class="ButtonGroup" style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(1)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(1)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(1)"><b>-</b></button>
+            </div>
+        </div>
+        
+        <div id="Player-2" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player2()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-2" for="PlayerNameValue-2" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-2" style="border-radius: 7px;">
+            <select id="PlayerBG-2" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP2">
+            </div>
+            <div style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(2)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(2)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(2)"><b>-</b></button>
+            </div>
+        </div>
+        <div id="Player-3" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player3()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-3" for="PlayerNameValue-3" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-3" style="border-radius: 7px;">
+            <select id="PlayerBG-3" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP3">
+            </div>
+            <div style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(3)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(3)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(3)"><b>-</b></button>
+            </div>
+        </div>
+        <div id="Player-4" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player4()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-4" for="PlayerNameValue-4" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-4" style="border-radius: 7px;">
+            <select id="PlayerBG-4" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP4">
+            </div>
+            <div style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(4)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(4)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(4)"><b>-</b></button>
+            </div>
+        </div>
+        <div id="Player-5" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player5()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-5" for="PlayerNameValue-5" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-5" style="border-radius: 7px;">
+            <select id="PlayerBG-5" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP5">
+            </div>
+            <div style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(5)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(5)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(5)"><b>-</b></button>
+            </div>
+        </div>
+        
+        <div id="Player-6" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player6()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-6" for="PlayerNameValue-6" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-6" style="border-radius: 7px;">
+            <select id="PlayerBG-6" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP6">
+            </div>
+            <div style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(6)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(6)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(6)"><b>-</b></button>
+            </div>
+        </div>
+        <div id="Player-7" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player7()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-7" for="PlayerNameValue-7" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-7" style="border-radius: 7px;">
+            <select id="PlayerBG-7" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP7">
+            </div>
+            <div style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(7)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(7)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(7)"><b>-</b></button>
+            </div>
+        </div>
+        <div id="Player-8" class="PlayerContainer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16" onclick="Player8()">
+                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <label id="PlayerName-8" for="PlayerNameValue-8" style="margin-right: 5px;"><em><strong>Player:</strong></em></label>
+            <input type="text" id="PlayerNameValue-8" style="border-radius: 7px;">
+            <select id="PlayerBG-8" class="BGSelect">
+                <option value="#3b5998" style="background-color: #3b5998;"></div></option>
+                <option value="#29aa5a" style="background-color: #29aa5a;"></div></option>
+                <option value="#e6e342" style="background-color: #e6e342;"></option>
+                <option value="#df0829" style="background-color: #df0829;"></option>
+                <option value="#eb9b10" style="background-color: #eb9b10;"></option>
+                <option value="#d42385" style="background-color: #d42385;"></option>
+                <option value="#97d1f4" style="background-color: #97d1f4"></option>
+                <option value="#864e1f" style="background-color: #864e1f;"></option>
+            </select>  
+        
+            <div>
+                <input type="number" class="Operations" id="OperationsP8">
+            </div>
+            <div style="padding-left: 100px;">
+                <button type="button" class="OpButton" onclick="Add(8)"><b>+</b></button>
+                <button type="button" class="OpButton Equals" onclick="Equals(8)"><b>=</b></button>
+                <button type="button" class="OpButton" onclick="Subtract(8)"><b>-</b></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var NumPlayers = prompt("Quantos jogadores vão jogar?");
+        CheckPlayers(NumPlayers);
+        
+        function CheckPlayers(Numplayers){
+            switch(NumPlayers){
+            case "1":
+                document.getElementById("Player-2").style.display = "none";
+                document.getElementById("Player-3").style.display = "none";
+                document.getElementById("Player-4").style.display = "none";
+                document.getElementById("Player-5").style.display = "none";
+                document.getElementById("Player-6").style.display = "none";
+                document.getElementById("Player-7").style.display = "none";
+                document.getElementById("Player-8").style.display = "none";
+            break;
+            case "2":
+                document.getElementById("Player-3").style.display = "none";
+                document.getElementById("Player-4").style.display = "none";
+                document.getElementById("Player-5").style.display = "none";
+                document.getElementById("Player-6").style.display = "none";
+                document.getElementById("Player-7").style.display = "none";
+                document.getElementById("Player-8").style.display = "none";
+            break;
+            case "3":
+                document.getElementById("Player-4").style.display = "none";
+                document.getElementById("Player-5").style.display = "none";
+                document.getElementById("Player-6").style.display = "none";
+                document.getElementById("Player-7").style.display = "none";
+                document.getElementById("Player-8").style.display = "none";
+            break;
+            case "4":
+                document.getElementById("Player-5").style.display = "none";
+                document.getElementById("Player-6").style.display = "none";
+                document.getElementById("Player-7").style.display = "none";
+                document.getElementById("Player-8").style.display = "none";
+            break;
+            case "5":
+                document.getElementById("Player-6").style.display = "none";
+                document.getElementById("Player-7").style.display = "none";
+                document.getElementById("Player-8").style.display = "none";
+            break;
+            case "6":
+                document.getElementById("Player-7").style.display = "none";
+                document.getElementById("Player-8").style.display = "none";
+            break;
+            case "7":
+                document.getElementById("Player-8").style.display = "none";
+            break;
+            case "8":
+
+            break;
+            default:
+                alert("Sinto muito, o limite de jogadores é de 1 a 8");
+                NumPlayers = prompt("Quantos jogadores vão jogar?");
+                CheckPlayers(NumPlayers);
+            }
+        }
+    </script>
+
+</body>
+    <script src="javascript.js"></script>
+</html>

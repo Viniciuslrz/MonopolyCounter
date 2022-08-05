@@ -1,0 +1,76 @@
+body{
+    background-color: #252525;
+}
+
+.OpButton{
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 70px;
+    height: 80px;
+    border-radius: 7px;
+    font-family: Orbitron;
+    font-size: 50px;
+}
+
+.Equals{
+    background-color: #2b9938;
+}
+
+.Operations{
+    width: 95%;
+    height: 100px;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 10px;
+    font-family: Orbitron;
+    font-size: 50px;
+    font-weight: bolder;
+    color: #008F11;
+    background-color: #0D0208;  
+}
+
+.PlayerContainer{
+    padding: 10px;
+    border-radius: 25px;
+    height: 300px;
+    width: 500px;
+    background-color: white;
+}
+
+.BGSelect{
+    border-radius: 7px;
+    width: 100px;
+    height: 30px;
+}
+
+.PlayerContainer{
+    margin: 10px;
+}
+
+.PageContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 520px);
+    grid-template-rows: repeat(50px);
+}
+
+@media (max-width: 400px){
+    .PlayerContainer{
+        width: 300px;
+        height: 200px;
+        align-content: center;
+    }
+    .PageContainer{
+        grid-template-columns: repeat(1, 300px);
+        grid-template-rows: repeat(50px);
+    }
+    .OpButton{
+        justify-self: center;
+        margin-top: 7px;
+        width: 35px;
+        height: 40px;
+        border-radius: 7px;
+        font-family: Orbitron;
+        font-size: 25px;
+    }
+
+}
